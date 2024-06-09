@@ -106,7 +106,7 @@ self.onfetch = event => {
     responseHeaders.set('Content-Length', headers.get('Content-Length'))
   }
 
-  if (headers.has('Content-Length')) {
+  if (headers.has('Authorization')) {
     responseHeaders.set('Authorization', headers.get('Authorization'))
   }
 
