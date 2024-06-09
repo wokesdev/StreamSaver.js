@@ -90,6 +90,9 @@ self.onfetch = event => {
   // so we only copy over the length & disposition
   const responseHeaders = new Headers({
     'Content-Type': 'application/octet-stream; charset=utf-8',
+	'Range': event.request.headers.get('range') != undefined
+			? event.request.headers.get("range")
+			: "0-",
 
     // To be on the safe side, The link can be opened in a iframe.
     // but octet-stream should stop it.
