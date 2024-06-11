@@ -104,15 +104,9 @@ self.onfetch = event => {
   })
 
   let headers = new Headers(data.headers || {})
-	  
-	console.log(headers)
 
   if (headers.has('Content-Length')) {
     responseHeaders.set('Content-Length', headers.get('Content-Length'))
-  }
-
-  if (headers.has('Authorization')) {
-    responseHeaders.set('Authorization', headers.get('Authorization'))
   }
 
   if (headers.has('Content-Disposition')) {
